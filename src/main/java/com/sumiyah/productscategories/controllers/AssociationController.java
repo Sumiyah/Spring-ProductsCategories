@@ -14,17 +14,18 @@ import com.sumiyah.productscategories.services.PCService;
 @Controller
 public class AssociationController {
 
-	private final PCService appService;
-	public AssociationController(PCService service) {
-		this.appService = service;
-	}
-	@PostMapping("/associations/{kind}")
-	public String Create(@Valid @ModelAttribute("association") CategoryProduct association,
-			BindingResult result,
-			@PathVariable("kind") String kind) {
-		if(result.hasErrors())
-			return String.format("/%s/show.jsp", kind);
-		appService.createAssociation(association);
-		return "redirect:/";
-	}
+//	private PCService appService;
+//	public AssociationController(PCService service) {
+//		this.appService = service;
+//	}
+//	
+//	@PostMapping("/associations/{kind}")
+//	public String Create(@Valid @ModelAttribute("association") CategoryProduct association,
+//			BindingResult result,
+//			@PathVariable("kind") String kind) {
+//		if(result.hasErrors())
+//			return String.format("show%s.jsp", kind);
+//		appService.createAssociation(association);
+//		return "redirect:/";
+//	}
 }

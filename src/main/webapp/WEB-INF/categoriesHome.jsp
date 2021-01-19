@@ -13,15 +13,22 @@
     <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="container mt-5">
-  <div class="row">
-  <div class="col">
-    <h1 class="text-center">Welcome to Products and Categories!</h1>
+  <div class="container mt-5 text-center">
+  <div class="row justify-content-around">
+  <div class="text-left">
+    <h1>Categories</h1>
   </div>
+    <div class="text-right">
+    <a href="/" class="btn btn-info">Home</a>
+    <a href="/categories/new" class="btn btn-success">New Category</a>
+    </div>
   </div>
-  <div class="row justify-content-around mt-5">
-    <a href="/categories/" class="btn btn-info">Categories</a>
-    <a href="/products" class="btn btn-success">Products</a>
+  <div class="row mt-5">
+    <c:forEach items="${ category }" var="category">
+  <div class="col-4">
+    <p ><a href="/categories/${category.id }" class="btn btn-warning text-dark">${category.name}</a></p>
+  </div>
+    </c:forEach>
   </div>
   </div>
 </body>

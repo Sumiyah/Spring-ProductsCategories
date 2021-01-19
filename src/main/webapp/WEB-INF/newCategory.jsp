@@ -13,16 +13,20 @@
     <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div class="container mt-5">
-  <div class="row">
-  <div class="col">
-    <h1 class="text-center">Welcome to Products and Categories!</h1>
-  </div>
-  </div>
-  <div class="row justify-content-around mt-5">
-    <a href="/categories/" class="btn btn-info">Categories</a>
-    <a href="/products" class="btn btn-success">Products</a>
-  </div>
+  <div class="container text-center mt-5">
+    <h1>New Category</h1>
+    <div class="row justify-content-center mt-3">
+			<form:form action="/categories" method="post"
+				modelAttribute="category">
+				<div class="form-group">
+					<form:label path="name">Name:</form:label>
+					<form:errors path="name" />
+					<form:input path="name" />
+				</div>
+				<input type="submit" value="Create" class="btn btn-primary"/>
+				<a href="/categories" class="btn btn-danger">Cancel</a>
+			</form:form>
+		</div>
   </div>
 </body>
 </html>

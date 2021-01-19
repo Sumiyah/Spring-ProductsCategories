@@ -1,11 +1,13 @@
 package com.sumiyah.productscategories.repositories;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.sumiyah.productscategories.models.CategoryProduct;
 
-public interface PCRepository extends CrudRepository<CategoryRepository, Long>{
+@Repository
+public interface PCRepository extends CrudRepository<CategoryProduct, Long>{
 
-	CategoryProduct save(CategoryProduct pc);
+	
 
 }

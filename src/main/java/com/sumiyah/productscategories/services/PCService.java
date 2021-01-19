@@ -2,6 +2,9 @@ package com.sumiyah.productscategories.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.sumiyah.productscategories.models.Category;
 import com.sumiyah.productscategories.models.CategoryProduct;
 import com.sumiyah.productscategories.models.Product;
@@ -9,17 +12,21 @@ import com.sumiyah.productscategories.repositories.CategoryRepository;
 import com.sumiyah.productscategories.repositories.PCRepository;
 import com.sumiyah.productscategories.repositories.ProductRepository;
 
+@Service
 public class PCService {
 	
-	private final ProductRepository ProductRepo;
-	private final CategoryRepository CategoryRepo;
-	private final PCRepository PCRepo;
+	@Autowired
+	private  ProductRepository ProductRepo;
+	@Autowired
+	private  CategoryRepository CategoryRepo;
+	@Autowired
+	private  PCRepository PCRepo;
 	
-	public PCService(ProductRepository pRepo, CategoryRepository cRepo, PCRepository pcRepo) {
-		this.ProductRepo = pRepo;
-		this.CategoryRepo = cRepo;
-		this.PCRepo = pcRepo;
-	}
+//	public PCService(ProductRepository pRepo, CategoryRepository cRepo, PCRepository pcRepo) {
+//		this.ProductRepo = pRepo;
+//		this.CategoryRepo = cRepo;
+//		this.PCRepo = pcRepo;
+//	}
 	
 	public Product createProduct(Product product) {
 		return ProductRepo.save(product);
